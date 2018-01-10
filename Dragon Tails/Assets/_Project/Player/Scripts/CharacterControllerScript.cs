@@ -23,6 +23,7 @@ public class CharacterControllerScript : MonoBehaviour
         animator = GetComponent<AnimationScript>();
         animator.SetAnimation(AnimationScript.AnimationState.Idle);
         StartFlying();
+        fireBase.transform.forward = transform.forward;
     }
 
     // Update is called once per frame
@@ -67,6 +68,7 @@ public class CharacterControllerScript : MonoBehaviour
             fire.transform.localPosition = Vector3.zero;
             //fire.transform.position = fire.transform.position + (fire.transform.forward *0.5f);
             fire.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            fire.transform.localScale = new Vector3(1, 1, 1);
             //Physics.IgnoreCollision(collider, fire.GetComponent<ParticleSystem>().);
             Destroy(fire, 5);
             Quaternion rot = fire.transform.rotation;

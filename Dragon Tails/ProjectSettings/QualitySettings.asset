@@ -105,7 +105,7 @@ QualitySettings:
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
+    antiAliasing: 4
     softParticles: 1
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -125,7 +125,7 @@ QualitySettings:
     PS4: 3
     PSM: 3
     PSP2: 1
-    Standalone: 3
+    Standalone: 0
     Tizen: 1
     WebGL: 2
     WiiU: 3
