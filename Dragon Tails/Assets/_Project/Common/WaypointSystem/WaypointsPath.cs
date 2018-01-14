@@ -43,4 +43,14 @@ public class WaypointsPath : MonoBehaviour {
                 Gizmos.DrawLine(waypoints[a].position, waypoints[a + 1].position);
         }
     }
+
+    int GetClosestWaypoint()
+    {
+        return 0;
+    }
+
+    Transform GetTransform(int waypoint)
+    {
+        return waypoints[waypoint];
+    }
 }

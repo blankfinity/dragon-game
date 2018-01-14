@@ -5,6 +5,9 @@ using CnControls;
 
 public class EnemyDragonControllerScript : MonoBehaviour
 {
+    public GameObject fire;
+    public Transform Player;
+
     void Start()
     {
     }
@@ -26,4 +29,9 @@ public class EnemyDragonControllerScript : MonoBehaviour
     void Dive() { }
 
     void TackleTarget(Transform target) { }
+
+    void Attack()
+    {
+
+    }
 }

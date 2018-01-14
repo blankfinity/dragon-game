@@ -8,8 +8,8 @@ public class MovementScript : MonoBehaviour
     public float XSensitivity = 2f;
     public float YSensitivity = 2f;
     public bool clampVerticalRotation = true;
-    public float MinimumX = -90F;
-    public float MaximumX = 90F;
+    public float MinimumX = -45F;
+    public float MaximumX = 45F;
     public bool smooth;
     public float smoothTime = 5f;
     public bool lockCursor = true;
@@ -33,6 +33,14 @@ public class MovementScript : MonoBehaviour
 		m_CharacterTargetRot = transform.localRotation;
     }
 
+    private void Update()
+    {
+        if (lockCursor)
+            Cursor.lockState = CursorLockMode.Locked;
+        else
+            Cursor.lockState = CursorLockMode.None;
+
+    }
 
     public void FixedUpdate()
     {
@@ -56,6 +64,8 @@ public class MovementScript : MonoBehaviour
     {
         float yRot = CnInputManager.GetAxis("Mouse X") * XSensitivity;
         float xRot = CnInputManager.GetAxis("Mouse Y") * YSensitivity;
+
+        //xRot = Mathf.Abs((MaxHeight - transform.position.y))
 
         m_CharacterTargetRot *= Quaternion.Euler(-xRot, yRot, 0f);		
 
